@@ -1,0 +1,26 @@
+<h1>Turtle</h1>
+<div class="row">
+  <div class="col-md-8">
+    <canvas turtle-processing="sketch"></canvas>
+  </div>
+  <div class="col-md-4">
+    <strong>My Commands</strong>
+    <ol class="command-list">
+      <li class="command" ng-repeat="command in turtle.commands" ng-class="{ disabled: !command.enabled }">
+        <a ng-show="command.enabled" ng-click="command.enabled = false" style="float: right">Disable</a>
+        <a ng-hide="command.enabled" ng-click="command.enabled = true" style="float: right">Enable</a>
+        <span>{{ command.command }}</span>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<form role="form" ng-submit="turtle.addCommand()">
+  <div class="form-group">
+    <label for="command">What should I do next?</label>
+    <input class="form-control" id="command" ng-model="turtle.newCommand" placeholder="Enter a command..." autofocus />
+  </div>
+  <div ng-show="turtle.error" class="alert alert-warning">{{ turtle.error }}</div>
+
+  <button type="submit">Do it!</button>
+</form>

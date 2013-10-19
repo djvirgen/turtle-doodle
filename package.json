@@ -1,0 +1,19 @@
+{
+  "name": "blog",
+  "version": "0.0.0",
+  "description": "A blog",
+  "main": "app/index.coffee",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "coffee-script": "~1.6.3",
+    "express": "~3.4.0",
+    "stylus": "~0.38.0",
+    "jade": "~0.35.0",
+    "connect-coffee-script": "~0.1.6",
+    "deep-extend": "~0.2.6"
+  }
+}
