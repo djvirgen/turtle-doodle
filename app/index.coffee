@@ -3,6 +3,7 @@ connectCoffeeScript = require 'connect-coffee-script'
 stylus = require 'stylus'
 deepExtend = require 'deep-extend'
 app = express()
+port = process.env.PORT or 3000
 
 app.set 'views', "#{__dirname}/views"
 app.set 'view engine', 'jade'
@@ -25,4 +26,4 @@ app.get '/', (req, res) ->
 app.get '*', (req, res) ->
   res.redirect "/##{req.path}"
 
-app.listen 3000
+app.listen port
