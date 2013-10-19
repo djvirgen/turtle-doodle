@@ -26,4 +26,4 @@ app.get '/', (req, res) ->
 app.get '*', (req, res) ->
   res.redirect "/##{req.path}"
 
-app.listen port
+app.listen port, -> console.log port, __dirname
